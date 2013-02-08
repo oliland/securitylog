@@ -18,6 +18,12 @@
       body {
         width: 30em;
         margin: 0 auto;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      p {
+        margin: 0 0 10px 0;
+        padding: 0;
       }
     </style>
   </head>
