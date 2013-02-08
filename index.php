@@ -21,6 +21,9 @@
         font-size: 14px;
         line-height: 20px;
       }
+      h1, h2, h3 {
+        line-height: 40px;
+      }
       p {
         margin: 0 0 10px 0;
         padding: 0;
