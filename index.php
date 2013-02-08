@@ -1,7 +1,3 @@
-<?php
-header('Access-Control-Allow-Origin: *');  
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +11,7 @@ header('Access-Control-Allow-Origin: *');
     // Get a fucking rss feed
     function parseRSS(url, callback) {
       $.ajax({
-        url: document.location.protocol + url,
+        url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
         dataType: 'xml',
         crossDomain: true,
         success: function(data) {
@@ -23,7 +19,7 @@ header('Access-Control-Allow-Origin: *');
         }
       });
     }
-    parseRSS('//nvd.nist.gov/download/nvd-rss.xml', function(data) {
+    parseRSS('http://nvd.nist.gov/download/nvd-rss.xml', function(data) {
       console.log(data);
     });
   </script>
