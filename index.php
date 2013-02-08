@@ -31,7 +31,8 @@
     }
     parseRSS('http://nvd.nist.gov/download/nvd-rss.xml', function(data) {
       $.each(data.entries, function(index, entry) {
-        $("#vulnerabilityTemplate").tmpl(entry).appendTo("#vulnerabilities");
+        var output = Mustache.render($("#vulnerabilityTemplate").html(), entry);
+        $("#vulnerabilities").append(output);
       });
     });
   </script>
