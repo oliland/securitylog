@@ -13,6 +13,7 @@
       $.ajax({
         url: document.location.protocol + url,
         dataType: 'xml',
+        crossDomain: true,
         success: function(data) {
           callback(data.responseData.feed);
         }
