@@ -2,10 +2,21 @@
 <html>
   <head>
     <title>Upgrade this fucking software</title>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
+    <script id="vulnerabilityTemplate" type="text/template">
+      <div class="vulnerability">
+        <a href="{{link}}"><h2>{{title}}</h2></a>
+        <h3>{{publishedDate}}</h3>
+        <p>{{content}}</p>
+      </div>
+    </script>
   </head>
   <body>
     <h1>FUCK</h1>
+    <div id="vulnerabilities">
+
+    </div>
   </body>
   <script>
     // Get a fucking rss feed
@@ -19,7 +30,9 @@
       });
     }
     parseRSS('http://nvd.nist.gov/download/nvd-rss.xml', function(data) {
-      console.log(data);
+      $.each(data.entries, function(index, entry) {
+        $("#vulnerabilityTemplate").tmpl(entry).appendTo("#vulnerabilities");
+      });
     });
   </script>
 
