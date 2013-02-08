@@ -24,6 +24,15 @@
       h1, h2, h3 {
         line-height: 40px;
       }
+      h1 {
+        font-size: 38.5px;
+      }
+      h2 {
+        font-size: 31.5px;
+      }
+      h3 {
+        font-size: 24.5px;
+      }
       p {
         margin: 0 0 10px 0;
         padding: 0;
