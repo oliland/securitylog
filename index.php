@@ -11,9 +11,18 @@
         <p>{{content}}</p>
       </div>
     </script>
+    <style>
+      html {
+        font-family: Helvetica, arial, sans;
+      }
+      body {
+        width: 30em;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>FUCK</h1>
+    <h1>Security Vulnerabilities - Latest First</h1>
     <div id="vulnerabilities">
 
     </div>
